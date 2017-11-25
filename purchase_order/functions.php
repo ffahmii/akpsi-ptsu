@@ -27,3 +27,8 @@ function getRandomCustomer() {
 	];
 	return $customerFirstNames[rand(1, 100) % count($customerFirstNames)] . ' ' . $customerLastNames[rand(1, 100) % count($customerLastNames)];
 }
+
+function getRandomDate($format = 'd F Y') {
+	return date($format, mt_rand(1511457239, 1514049238));
+}
+

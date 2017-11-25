@@ -21,8 +21,12 @@
             </span>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="create.php"><i class="fa fa-circle-o"></i> Tambah</a></li>
-					<li><a href="list.php"><i class="fa fa-circle-o"></i> Lihat Daftar</a></li>
+                    <?php
+                        $uri = explode('/', $_SERVER['REQUEST_URI']);
+                        $currentFile = $uri[count($uri)-1];
+                    ?>
+					<li class="<?php echo $currentFile === 'create.php' ? 'active' : ''; ?>"><a href="create.php"><i class="fa fa-circle-o"></i> Tambah</a></li>
+					<li class="<?php echo $currentFile === 'list.php' ? 'active' : ''; ?>"><a href="list.php"><i class="fa fa-circle-o"></i> Lihat Daftar</a></li>
 				</ul>
 			</li>
 		</ul>

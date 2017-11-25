@@ -65,7 +65,7 @@
 							];
 
 							for ($i = 1; $i <= 100; $i++) {
-								$date = date("d F Y H:i:s", mt_rand(1511457239, 1514049238));
+								$date = getRandomDate();
 								$poId = str_pad($i, 5, '0', STR_PAD_LEFT);
 								?>
                                 <tr>
