@@ -2,6 +2,8 @@
 
 <?php include('./sidebar.php'); ?>
 
+<?php include('./functions.php'); ?>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -17,6 +19,17 @@
 
     <!-- Main content -->
     <section class="content">
+        <?php
+            if (isset($_GET['message']) && $_GET['message'] === 'success') {
+        ?>
+                <div class="callout callout-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4>Success</h4>
+                    <span>Berhasil menyimpan Purchase Order</span>
+                </div>
+        <?php
+            }
+        ?>
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
@@ -37,30 +50,7 @@
                             </thead>
 							<?php
 
-							$customerFirstNames = [
-								'Vanita',
-								'Nicolasa',
-								'Illa',
-								'Nereida',
-								'Donnette',
-								'Melita',
-								'Signe',
-								'Claretta',
-								'Jennell',
-								'Robert'
-							];
-							$customerLastNames = [
-								'Jessenia',
-								'Luciana',
-								'Elinore',
-								'Elizabet',
-								'Carmelo',
-								'Kiyoko',
-								'Leticia',
-								'Wyatt',
-								'Imelda',
-								'Rupert'
-							];
+
 							$availableStatuses = [
 								'Diajukan',
 								'Ditolak',
@@ -76,11 +66,16 @@
 
 							for ($i = 1; $i <= 100; $i++) {
 								$date = date("d F Y H:i:s", mt_rand(1511457239, 1514049238));
+								$poId = str_pad($i, 5, '0', STR_PAD_LEFT);
 								?>
                                 <tr>
-                                    <td><?php echo str_pad($i, 5, '0', STR_PAD_LEFT); ?></td>
+                                    <td>
+                                        <a href="detail.php?poId=<?php echo $poId; ?>">
+											<?php echo $poId; ?>
+                                        </a>
+                                    </td>
                                     <td><?php echo $date; ?></td>
-                                    <td><?php echo $customerFirstNames[rand($i, 100) % count($customerFirstNames)] . ' ' . $customerLastNames[rand($i, 100) % count($customerLastNames)]; ?></td>
+                                    <td><?php echo getRandomCustomer() ?></td>
                                     <td><?php echo "Rp. " . number_format(rand(10000000, 150000000), 2, ',', '.'); ?></td>
                                     <td><?php echo $availableStatuses[rand(0, 9)]; ?></td>
                                 </tr>
