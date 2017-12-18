@@ -53,13 +53,15 @@
 
 
 							$availableStatuses = [
-								'Direncanakan untuk diproduksi',
-								'Diproduksi',
-								'Terjadwal untuk pengiriman',
-								'Disetujui QC',
-								'Terkirim',
-								'Inovice terbit',
-								'Terbayar'
+                                'Persiapan Produksi',
+                                'Direncanakan untuk Produksi',
+                                'Mulai Produksi',
+                                'Selesai Produksi',
+                                'Terjadwal untuk pengiriman',
+                                'Disetujui QC',
+                                'Terkirim',
+                                'Inovice terbit',
+                                'Terbayar'      
 							];
 
 							for ($i = 1; $i <= 10; $i++) {
@@ -69,11 +71,11 @@
 								?>
                                 <tr>
                                     <td>
-                                        <a href="detail.php?<?php echo 'ppdoId=' . $ppdoId . '&status=' . $availableStatuses[$i-1]; ?>">
-											<?php echo $ppdoId; ?>
+                                        <a href="detail.php?<?php echo 'ppdoId=' . 'PPDO' . $ppdoId . '&status=' . $availableStatuses[$i-1]; ?>">
+											<?php echo 'PPDO' . $ppdoId; ?>
                                         </a>
                                     </td>
-                                    <td><?php echo $poId; ?></td>
+                                    <td><?php echo 'PO' . $poId; ?></td>
                                     <td><?php echo $date; ?></td>
                                     <td><?php echo getRandomCustomer() ?></td>
                                     <td><?php echo "Rp. " . number_format(rand(10000000, 150000000), 2, ',', '.'); ?></td>
@@ -90,10 +92,10 @@
                                 <tr>
                                     <td>
                                         <a href="detail.php?ppdoId=<?php echo $ppdoId; ?>">
-											<?php echo $ppdoId; ?>
+											<?php echo 'PPDO' . $ppdoId; ?>
                                         </a>
                                     </td>
-                                    <td><?php echo $poId; ?></td>
+                                    <td><?php echo 'PO' . $poId; ?></td>
                                     <td><?php echo $date; ?></td>
                                     <td><?php echo getRandomCustomer() ?></td>
                                     <td><?php echo "Rp. " . number_format(rand(10000000, 150000000), 2, ',', '.'); ?></td>

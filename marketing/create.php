@@ -1,9 +1,3 @@
-<?php include('../template/header.php'); ?>
-
-<?php include('./sidebar.php'); ?>
-
-<?php include('./functions.php'); ?>
-
 <?php
 
 	if (isset($_POST['save_purchase_order']) && $_POST['save_purchase_order'] === 'submit') {
@@ -11,6 +5,13 @@
 	}
 
 ?>
+
+<?php include('../template/header.php'); ?>
+
+<?php include('./sidebar.php'); ?>
+
+<?php include('./functions.php'); ?>
+
 
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -44,7 +45,7 @@
 											<?php
 											for ($i = 1; $i <= 100; $i++) {
 												$poId = str_pad($i, 5, '0', STR_PAD_LEFT);
-												echo '<option>' . $poId . '</option>';
+												echo '<option>' . 'PO' . $poId . '</option>';
 											}
 											?>
 										</select>

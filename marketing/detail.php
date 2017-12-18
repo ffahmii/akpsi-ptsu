@@ -14,7 +14,7 @@
 			<li><a href="#"><i class="fa fa-bar-chart"></i> Home</a></li>
 			<li><a href="#">PPDO</a></li>
 			<li><a href="#">Detail</a></li>
-			<li class="active"><?php echo isset($_GET['poId']) ? $_GET['poId'] : '00001'; ?></li>
+			<li class="active"><?php echo isset($_GET['ppdoId']) ? $_GET['ppdoId'] : 'PPDO00001'; ?></li>
 		</ol>
 	</section>
 
@@ -31,7 +31,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<h4>
-									PPDO #<?php echo isset($_GET['poId']) ? $_GET['poId'] : '00001'; ?>
+									PPDO #<?php echo isset($_GET['ppdoId']) ? $_GET['ppdoId'] : 'PPDO00001'; ?>
 								</h4>
 							</div>
 						</div>
@@ -40,7 +40,7 @@
                                 <label>No Purchase Order</label>
                             </div>
                             <div class="col-xs-4">
-                                00004
+                                PO00004
                             </div>
                         </div>
 						<div class="row">

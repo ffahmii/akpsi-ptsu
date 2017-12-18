@@ -129,7 +129,13 @@
     })
 </script>
 
-<?php include('../purchase_order/after_script.php');?>
+<?php include('../sales/after_script.php');?>
+<?php include('../keuangan/after_script.php');?>
+<?php include('../produksi/after_script.php');?>
+<?php include('../ppc/after_script.php');?>
+<?php include('../marketing/after_script.php');?>
+<?php include('../gudang2/after_script.php');?>
+<?php include('../qcontrol/after_script.php');?>
 
 </body>
 </html>
